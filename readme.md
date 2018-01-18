@@ -12,6 +12,8 @@
 
 ![示例](./doc/images/1.png)
 
+演示：https://forwardnow.github.io/statetree/dist/index.html
+
 ## 4. 使用
 
 参考：`dist/index.html`
