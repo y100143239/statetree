@@ -1,0 +1,16 @@
+{
+  "name": "statetree",
+  "version": "1.0.0",
+  "description": "## 1. 简介",
+  "main": "webpack.config.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>statetree</title>
+
+    <script src="../dep/jquery/1.11.3/jquery.js"></script>
+
+    <script src="../dep/jstree/3.3.4/jstree.js"></script>
+    <link rel="stylesheet" href="../dep/jstree/3.3.4/themes/default/style.css">
+
+    <link rel="stylesheet" href="../dep/font-awesome/4.7.0/font-awesome.css">
+
+    <script src="statetree.js"></script>
+
+
+</head>
+<style>
+    body { font-size: 14px;color: #333;font-family: "Microsoft YaHei",sans-serif; }
+    button { padding: 0.5em; margin: 1em; display: block; }
+
+    .jstree-statetree .fa-folder { color: #85bcf0; }
+    .jstree-statetree .fa-file { color: #8269ca; }
+
+</style>
+
+
+
+<div id="selectTree"
+     data-options='{
+        "core": {
+            "url": "../test/data.json",
+            "defaultFolderIcon": "fa fa-folder",
+            "defaultFileIcon": "fa fa-file",
+            "rootId": null
+        },
+        "mapping": {
+            "id": "menuId",
+            "text": "menuName",
+            "icon": "icon",
+            "parentId": "treeParentid",
+            "visible": "visiable",
+            "expand": "expand",
+            "selected": "selected"
+        }
+     }'
+></div>
+
+
+<button type="button" id="getSelectedNodes">获取选中的节点：$selectTree.stateTree( "getSelectedNodes" )</button>
+<button type="button" id="getNodeById">获取指定ID的节点：$selectTree.stateTree( "getNodeById", [ "1", "2" ] )</button>
+<button type="button" id="selectNodeById">选中指定ID的节点：$selectTree.stateTree( "selectNodeById", [ "1", "2" ] )</button>
+<button type="button" id="deselectNodeById">反选指定ID的节点：$selectTree.stateTree( "deselectNodeById", [ "1", "2" ] )</button>
+
+
+<script>
+    +function ( $ ) {
+
+        var $selectTree = $( "#selectTree" );
+
+        $selectTree.stateTree( $selectTree.data( "options" ) );
+
+        $( "#getSelectedNodes" ).click( function () {
+            var
+                jstreeNodeList = $selectTree.stateTree( "getSelectedNodes" )
+            ;
+            $.each( jstreeNodeList, function () {
+                console.info( this.data );
+            } );
+        });
+
+        $( "#getNodeById" ).click( function () {
+            var
+                jstreeNodeList = $selectTree.stateTree( "getNodeById", [ "1", "2" ] )
+            ;
+            $.each( jstreeNodeList, function () {
+                console.info( this.data );
+            } );
+        });
+
+        $( "#selectNodeById" ).click( function () {
+            $selectTree.stateTree( "selectNodeById", [ "1", "2" ] );
+        });
+
+        $( "#deselectNodeById" ).click( function () {
+            $selectTree.stateTree( "deselectNodeById", [ "1", "2" ] );
+        });
+
+    } ( window.jQuery );
+</script>
+
+</body>
+</html>
