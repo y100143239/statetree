@@ -9,7 +9,8 @@
  * [jstree](https://www.jstree.com/)
  * [font-awesome](http://fontawesome.io/)
  
-[补充] 如果是在PKUI里已包含这些依赖文件
+说明
+ * 在PKUI里，已包含这些依赖文件
 
 ## 2. 编撰
 
@@ -47,7 +48,8 @@
                 "defaultFolderIcon": "fa fa-folder",
                 # 默认图标 - 叶子节点
                 "defaultFileIcon": "fa fa-file",
-                # 指定根节点，如 "id_1", { "id_1": true, "id_2": true }
+                # 指定根节点，如 "id_1", { "id_1": true, "id_2": true }。
+                # 如果不指定，则将“parentId”为"-1"、-1、null、undefined的节点作为根节点
                 "rootId": null
             },
             # 字段映射
