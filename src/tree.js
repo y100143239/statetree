@@ -130,7 +130,7 @@ Tree.prototype.createJsTree = function ( gridResult ) {
 
 /**
  * @description 获取原始数据
- * @return {*}
+ * @return {Array}
  */
 Tree.prototype.getData = function () {
     return this.originData;
